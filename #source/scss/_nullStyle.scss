@@ -1,8 +1,38 @@
 //////////////////////////////// Шрифты ////////////////////////////////
 @font-face {
-   font-family: "Marvin";
-   src: url("../fonts/Marvin.woff2") format("woff2"), url("../fonts/Marvin.woff") format("woff");
-   font-weight: normal;
+   font-family: "Inter";
+   font-style: normal;
+   font-weight: 300;
+   font-display: swap;
+   src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+}
+@font-face {
+   font-family: "Inter";
+   font-style: normal;
+   font-weight: 400;
+   font-display: swap;
+   src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
+}
+@font-face {
+   font-family: "Inter";
+   font-style: normal;
+   font-weight: 500;
+   font-display: swap;
+   src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
+}
+@font-face {
+   font-family: "Inter";
+   font-style: normal;
+   font-weight: 600;
+   font-display: swap;
+   src: url("../fonts/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter-SemiBold.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Bebas Neue";
+   src: local("Bebas Neue Bold"), local("BebasNeueBold"), url("../fonts/bebasneuebold.woff2") format("woff2"),
+      url("../fonts/bebasneuebold.woff") format("woff"), url("bebasneuebold.ttf") format("truetype");
+   font-weight: 700;
    font-style: normal;
    font-display: swap;
 }
@@ -40,13 +70,13 @@ body {
    width: 100%;
    font-size: 100%;
    line-height: 1;
-   font-size: 14px;
+   font-size: 18px;
    -ms-text-size-adjust: 100%;
    -moz-text-size-adjust: 100%;
    -webkit-text-size-adjust: 100%;
-   font-family: "Marvin";
-   background: #0F0F0E;
-   color: #fcfcfc;
+   font-family: "Inter", sans-serif;
+   background: $white;
+   color: $black;
 }
 input,
 button,

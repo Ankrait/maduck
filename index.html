@@ -1,28 +1,336 @@
 <!DOCTYPE html>
 <html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mad Duck</title>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Mad Duck</title>
-   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-   <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-   <div class="wrapper">
-      <header class="header"></header>
-      <main class="main">
-         <div class="logo">
-            <img class="logo__image" src="img/logo.svg" alt="">
-            <div class="logo__title">
-               MAD DUCK
-            </div>
-         </div>
-      </main>
-      <footer class="footer"></footer>
-   </div>
-</body>
-
+	<body>
+		<div class="wrapper">
+			<header class="header"></header>
+			<main class="main">
+				<div class="general">
+					<div class="general__container">
+						<div class="general__content">
+							<div class="general__header">
+								<div class="general__logo logo">Mad Duck</div>
+								<div class="general__burger burger">
+									<span></span>
+								</div>
+							</div>
+							<div class="general__text">
+								<h2 class="general__title">превращаем ваши идеи в реальность</h2>
+								<div class="general__info">
+									Создаем сайты и разрабатываем приложения для iOS, Android
+								</div>
+							</div>
+							<button class="general__button">ПРЕВРАТИТЬ <span></span></button>
+						</div>
+						<div class="general__image">
+							<img src="img/general.png" alt="General" />
+						</div>
+					</div>
+				</div>
+				<div class="reasons">
+					<div class="reasons__container container">
+						<div class="reasons__title title">Почему мы?</div>
+						<div class="reasons__list">
+							<div class="reasons__item reason-item">
+								<div class="reason-item__title">Адекватная цена</div>
+								<div class="reason-item__info">
+									Стоимость наших услуг ниже, чем собственная команда разработчиков.
+								</div>
+							</div>
+							<div class="reasons__item reason-item">
+								<div class="reason-item__title">Гарантийная поддержка</div>
+								<div class="reason-item__info">
+									Оказываем бесплатную поддержку на весь срок, указанный в&nbsp;договоре.
+								</div>
+							</div>
+							<div class="reasons__item reason-item">
+								<div class="reason-item__title">Продуманный дизайн</div>
+								<div class="reason-item__info">
+									Проектируем современные и&nbsp;удобные интерфейсы.
+								</div>
+							</div>
+							<div class="reasons__item reason-item">
+								<div class="reason-item__title">Современные решения</div>
+								<div class="reason-item__info">
+									Используем передовые решениядля реализации наших проектов.
+								</div>
+							</div>
+							<div class="reasons__item reason-item">
+								<div class="reason-item__title">Проекты любой сложности</div>
+								<div class="reason-item__info">
+									Мы не боимся брать в&nbsp;разработку технически-сложные проекты.
+								</div>
+							</div>
+							<div class="reasons__item reason-item">
+								<div class="reason-item__title">Быстрая оценка</div>
+								<div class="reason-item__info">
+									Предварительную оценка за 2 часа и&nbsp;детальная смета за 1 день.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="services">
+					<div class="services__container container">
+						<div class="services__content">
+							<div class="services__title title">Наши услуги</div>
+							<div class="services__text">
+								Проектируем современные и удобные интерфейсы, которые соответствуют всем
+								требованиям.
+							</div>
+							<button
+								data-move=".services__container, -1, 1200"
+								class="services__button btn">
+								Оставить заявку
+							</button>
+						</div>
+						<div class="services__information">
+							<div class="services__item service-item">
+								<div class="service-item__name">Разработка MVP</div>
+								<div class="service-item__value">от 2 дней</div>
+							</div>
+							<div class="services__item service-item">
+								<div class="service-item__name">Разработка мобильных приложений</div>
+								<div class="service-item__value">от 2 дней</div>
+							</div>
+							<div class="services__item service-item">
+								<div class="service-item__name">Создание сайтов и web-сервисов</div>
+								<div class="service-item__value">от 2 дней</div>
+							</div>
+							<div class="services__item service-item">
+								<div class="service-item__name">Дизайн мобильных приложений и сайтов</div>
+								<div class="service-item__value">от 2 дней</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="about">
+					<div class="about__container container">
+						<div class="about__wrapper">
+							<div class="about__title title _white">О нас</div>
+							<div class="about__information">
+								<div class="about__text">
+									<p>
+										Мы диджитал агентство премиум класса, специализирующееся на разработке
+										мобильных приложений, веб-сервисов и IoT-решений.
+									</p>
+									<p>
+										Наша команда состоит из профессионалов, которые постоянно
+										совершенствуют свои навыки и следятза новыми технологиями.
+									</p>
+								</div>
+								<div class="about__text _large">
+									Наша цель - помочь нашим клиентам достичь успеха в цифровом мире и
+									улучшить качество жизни пользователей.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="fields">
+					<div class="fields__container container">
+						<div class="fields__content">
+							<div class="fields__title title">С кем мы работаем</div>
+							<div class="fields__text">
+								Также мы работаем со всеми, лишь бы деньги платили, риальна
+							</div>
+							<button data-move=".fields__container, -1, 1200" class="fields__button btn">
+								Работать с нами
+							</button>
+						</div>
+						<div class="fields__list">
+							<div class="fields__item item-rotate">
+								<div class="field-item__front">
+									<div class="field-item__name">Идейные стартапы</div>
+									<div class="field-item__image">
+										<img src="img/fields/startups.svg" alt="Startup" />
+									</div>
+								</div>
+								<div class="field-item__back">
+									Стартапы - отечественные, Матвей - отечетсвенный, Азат... -
+									отечетсвенный, Артем - отечетсвенный Titimiti = отечетсвенный
+								</div>
+							</div>
+							<div class="fields__item item-opacity">
+								<div class="field-item__front">
+									<div class="field-item__name">Рестораны и&nbsp;доставка еды</div>
+									<div class="field-item__image">
+										<img src="img/fields/food.svg" alt="Food" />
+									</div>
+								</div>
+								<div class="field-item__back">
+									Я влюблен, родная, я влюблен в тебя, мокрый район и луна это подтвердят
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Авто и&nbsp;транспорт</div>
+								<div class="field-item__image">
+									<img src="img/fields/car.svg" alt="Car" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Игровые проекты</div>
+								<div class="field-item__image">
+									<img src="img/fields/games.svg" alt="Games" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Маркетплейсы и&nbsp;агрегаторы</div>
+								<div class="field-item__image">
+									<img src="img/fields/marketplace.svg" alt="Marketplace" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Web3 продукты</div>
+								<div class="field-item__image">
+									<img src="img/fields/web3.svg" alt="Web3" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Социальные сети</div>
+								<div class="field-item__image">
+									<img src="img/fields/socnet.svg" alt="SocNet" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Фитнес и&nbsp;спорт</div>
+								<div class="field-item__image">
+									<img src="img/fields/sport.svg" alt="Sport" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">HR и&nbsp;обучение персонала</div>
+								<div class="field-item__image">
+									<img src="img/fields/hr.svg" alt="HR" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Системы СКУД</div>
+								<div class="field-item__image">
+									<img src="img/fields/scud.svg" alt="SCUD" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Медицина и&nbsp;здоровье</div>
+								<div class="field-item__image">
+									<img src="img/fields/health.svg" alt="Health" />
+								</div>
+							</div>
+							<div class="fields__item field-item">
+								<div class="field-item__name">Образование и&nbsp;курсы</div>
+								<div class="field-item__image">
+									<img src="img/fields/study.svg" alt="Study" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="faq">
+					<div class="faq__container container">
+						<div class="faq__title title">Q&A</div>
+						<div class="faq__list">
+							<div class="faq__item item-faq">
+								<div class="item-faq__header">
+									<div class="item-faq__question">
+										Сколько стоит арендовать Азата в час?
+									</div>
+									<div class="item-faq__plus"></div>
+								</div>
+								<div class="item-faq__answer">
+									Если говорить прям честно, то просто купи ему квартиру в Дубае.
+								</div>
+							</div>
+							<div class="faq__item item-faq">
+								<div class="item-faq__header">
+									<div class="item-faq__question">
+										Сколько стоит арендовать Артема в час?
+									</div>
+									<div class="item-faq__plus"></div>
+								</div>
+								<div class="item-faq__answer">
+									Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero est non
+									facere consequatur voluptate eum, nulla, cum, debitis distinctio
+									possimus amet aut culpa similique rerum optio. Autem animi dolor quasi.
+								</div>
+							</div>
+							<div class="faq__item item-faq">
+								<div class="item-faq__header">
+									<div class="item-faq__question">Почему нельзя арендовать Илью?</div>
+									<div class="item-faq__plus"></div>
+								</div>
+								<div class="item-faq__answer">
+									Если говорить прям честно, то просто купи ему квартиру в Дубае.
+								</div>
+							</div>
+							<div class="faq__item item-faq">
+								<div class="item-faq__header">
+									<div class="item-faq__question">Условия по аренде Матвея</div>
+									<div class="item-faq__plus"></div>
+								</div>
+								<div class="item-faq__answer">Бесплатный</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contact">
+					<div class="contact__container container">
+						<div class="contact__wrapper">
+							<div class="contact__content">
+								<div>
+									<div class="contact__title title _white">Работать с нами</div>
+									<div class="contact__text">
+										Вы можете оставить заявку или напрямую написать нам
+									</div>
+								</div>
+								<div class="contact__buttons">
+									<div class="contact__button _tg">Telegram</div>
+									<div class="contact__button _wa">WhatsApp</div>
+								</div>
+							</div>
+							<div class="contact__form">
+								<form class="form-contact">
+									<div class="form-contact__input">
+										<input type="text" placeholder="Имя" />
+									</div>
+									<div class="form-contact__input">
+										<input
+											class="form-contact__input tel-input"
+											type="text"
+											placeholder="Телефон" />
+									</div>
+									<div class="form-contact__textarea">
+										<textarea
+											class="form-contact__textarea"
+											placeholder="Опишите ваш проект"></textarea>
+									</div>
+									<div class="form-contact__file">
+										<input type="file" id="input-file" />
+										<label for="input-file">
+											<img src="img/file-upload.svg" alt="Загрузка файла" />
+											Загрузить файл
+										</label>
+									</div>
+									<button class="form-contact__button btn">Отправить заявку</button>
+								</form>
+								<div class="contact__link">
+									Я согласен с условиями <a>пользовательского соглашения</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+		<script src="js/script.js"></script>
+		<script src="js/moveBlock.js"></script>
+	</body>
 </html>

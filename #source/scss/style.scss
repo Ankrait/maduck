@@ -1,38 +1,43 @@
-@import "_nullStyle";
+// breakpoints
+$first-breakpoint: 1200px;
+$second-breakpoint: 900px;
 
-[class*="__container"] {
-   max-width: 1370px;
-   padding: 0 15px;
+// colors
+$white: #fbfbfb;
+$black: #313131;
+$dark-gray: #747474;
+$gray: #e0e0e0;
+$purple: #5a2fe1;
+
+@import "nullStyle";
+@import "ui-kit";
+
+.container {
+   max-width: 1448px;
+   padding: 0 24px;
    margin: 0 auto;
+}
+
+@media only screen and (max-width: $first-breakpoint) {
+   .container {
+      max-width: 948px;
+   }
 }
 
 .wrapper {
    overflow: hidden;
    display: flex;
-   flex-direction: column;
    min-height: 100%;
 }
 
 .main {
    flex: 1 1 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
 }
 
-.logo {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-
-   // .logo__image
-   &__image {
-   }
-
-   // .logo__title
-   &__title {
-      font-size: 25px;
-      margin: 10px 0 0 0;
-      white-space: nowrap;
-   }
-}
+@import "main/general";
+@import "main/reasons";
+@import "main/services";
+@import "main/about";
+@import "main/fields";
+@import "main/faq";
+@import "main/contact";

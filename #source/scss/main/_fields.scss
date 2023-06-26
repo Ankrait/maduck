@@ -1,0 +1,206 @@
+.fields {
+	margin: 180px 0 0 0;
+	// .fields__container
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	// .fields__content
+	&__content {
+		flex: 0 1 390px;
+	}
+
+	// .fields__title
+	&__title {
+	}
+
+	// .fields__text
+	&__text {
+		font-size: 18px;
+		line-height: 130%;
+		color: $dark-gray;
+		margin: 16px 0 0 0;
+		max-width: 310px;
+	}
+
+	// .fields__button
+	&__button {
+		margin: 40px 0 0 0;
+	}
+
+	// .fields__list
+	&__list {
+		flex: 0 1 910px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+	}
+
+	// .fields__item
+	&__item {
+	}
+}
+
+.field-item {
+	background: #ffffff;
+	border: 1px solid $gray;
+	border-radius: 15px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 30px 20px 20px 20px;
+
+	position: relative;
+	cursor: pointer;
+
+	// .field-item__name
+	&__name {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 130%;
+		height: calc(1.3 * 1em * 2);
+		width: 150px;
+		text-align: center;
+	}
+
+	// .field-item__image
+	&__image {
+	}
+}
+
+.item-rotate {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+
+	.field-item__front,
+	.field-item__back {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		background: #ffffff;
+		border: 1px solid $gray;
+		border-radius: 15px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		padding: 30px 20px 20px 20px;
+		backface-visibility: hidden;
+		transition: transform 1s ease;
+	}
+
+	.field-item__back {
+		transform: perspective(600px) rotateY(180deg);
+	}
+	.field-item__front {
+		transform: perspective(600px) rotateY(0);
+	}
+
+	&:hover {
+		.field-item__front {
+			transform: perspective(600px) rotateY(-180deg);
+		}
+		.field-item__back {
+			transform: perspective(600px) rotateY(0);
+		}
+	}
+	&:nth-child(2) .field-item__name {
+		width: 170px;
+	}
+}
+
+.item-opacity {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+
+	.field-item__front,
+	.field-item__back {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		background: #ffffff;
+		border: 1px solid $gray;
+		border-radius: 15px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		padding: 30px 20px 20px 20px;
+		backface-visibility: hidden;
+		transition: opacity 0.6s ease;
+	}
+
+	.field-item__back {
+		opacity: 0;
+	}
+	.field-item__front {
+		opacity: 1;
+	}
+
+	&:hover {
+		.field-item__front {
+			opacity: 0;
+		}
+		.field-item__back {
+			opacity: 1;
+		}
+	}
+	&:nth-child(2) .field-item__name {
+		width: 170px;
+	}
+}
+
+@media only screen and (max-width: $first-breakpoint) {
+	.fields {
+		margin: 122px 0 0 0;
+
+		// .fields__container
+		&__container {
+			flex-direction: column;
+			align-items: center;
+			gap: 32px;
+		}
+
+		&__content {
+			flex: 0;
+			text-align: center;
+		}
+
+		&__text {
+			margin: 6px auto 0 auto;
+		}
+
+		&__list {
+			flex: 0;
+			width: 100%;
+		}
+
+		&__button {
+			margin: 0 0 0 0;
+		}
+	}
+}
+
+@media only screen and (max-width: $second-breakpoint) {
+	.fields {
+		&__list {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

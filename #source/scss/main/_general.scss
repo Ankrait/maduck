@@ -1,0 +1,155 @@
+.general {
+	padding: 40px;
+	// .general__container
+	&__container {
+		max-width: 1840px;
+		margin: 0 auto;
+		display: flex;
+		border-radius: 42px;
+	}
+
+	// .general__content
+	&__content {
+		position: relative;
+		z-index: 1;
+
+		padding: 40px;
+		background: linear-gradient(105.36deg, $black -2.93%, #202020 97.34%);
+		box-shadow: 10px 0px 15px rgba(255, 255, 255, 0.1);
+		border-radius: 42px;
+
+		flex: 0 0 min(38%, 400px);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	// .general__header
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	// .general__text
+	&__text {
+		margin: 50px 0 0 0;
+	}
+
+	// .general__title
+	&__title {
+		font-family: "Bebas Neue";
+		font-weight: 700;
+		font-size: 136px;
+		line-height: 95%;
+
+		color: $white;
+	}
+
+	// .general__info
+	&__info {
+		line-height: 130%;
+		color: #f4f4f4;
+
+		margin: 20px 0 0 0;
+		max-width: 300px;
+	}
+
+	// .general__button
+	&__button {
+		margin: 50px 0 0 0;
+		padding: 40px 20px;
+		background: $white;
+		background-size: 200% 200%;
+
+		border-radius: 21px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-weight: 600;
+		line-height: 130%;
+
+		text-transform: uppercase;
+
+		color: $purple;
+		position: relative;
+		overflow: hidden;
+
+		span {
+			position: absolute;
+			width: 120%;
+			height: 120%;
+			background: #592fe11e;
+			top: 0;
+			left: 0;
+			transform: translate(150%, -80%);
+			transition: transform 0.3s ease;
+			border-radius: 21px;
+		}
+
+		&:hover {
+			span {
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+	// .general__image
+	&__image {
+		margin-left: -110px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 42px;
+		}
+	}
+}
+
+@media only screen and (max-width: 1500px) {
+	.general {
+		&__title {
+			font-size: 120px;
+		}
+	}
+}
+
+@media only screen and (max-width: 1350px) {
+	.general {
+		&__title {
+			font-size: 106px;
+		}
+	}
+}
+
+@media only screen and (max-width: $first-breakpoint) {
+	.general {
+		&__title {
+			font-size: 96px;
+			line-height: 100%;
+		}
+
+		&__content {
+			padding: 24px;
+		}
+
+		&__button {
+			margin: 50px 0 0 0;
+			padding: 30px 15px;
+		}
+
+		&__image {
+			margin-left: -200px;
+		}
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.general {
+		&__title {
+			font-size: 86px;
+		}
+	}
+}

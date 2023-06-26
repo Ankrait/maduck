@@ -1,0 +1,92 @@
+.title {
+	font-family: "Bebas Neue";
+	font-weight: 700;
+	font-size: 58px;
+	line-height: 130%;
+	color: $black;
+
+	&._white {
+		color: $white;
+	}
+}
+
+.btn {
+	max-width: 320px;
+	width: 100%;
+	padding: 18px 0;
+
+	background: $purple;
+	border-radius: 16px;
+
+	font-weight: 500;
+	line-height: 130%;
+	text-align: center;
+	font-size: 18px;
+
+	color: $white;
+	transition: background 0.2s ease-in-out;
+
+	&:hover {
+		background: #4d20dd;
+	}
+}
+
+.logo {
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 130%;
+	/* or 32px */
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: $white;
+}
+
+.burger {
+	width: 26px;
+	height: 20px;
+	position: relative;
+	cursor: pointer;
+
+	&::before,
+	&::after,
+	span {
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		background: $white;
+		transition: all 0.3s ease-in-out;
+	}
+
+	span {
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&::before,
+	&::after {
+		content: "";
+	}
+	&::before {
+		top: 0;
+	}
+	&::after {
+		bottom: 0;
+	}
+
+	&._active {
+		span {
+			opacity: 0;
+		}
+
+		&::before {
+			transform: rotate(-45deg) translateX(-50%);
+		}
+
+		&::after {
+			transform: rotate(45deg) translateX(-50%);
+		}
+	}
+}
