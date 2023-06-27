@@ -62,7 +62,6 @@
 	.about {
 		margin: 120px 0 0 0;
 
-
 		&__wrapper {
 			padding: 40px;
 		}
@@ -77,6 +76,22 @@
 
 			&._large {
 				flex: 0 0 100%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $second-breakpoint) {
+	.about {
+		&__information {
+			margin: 8px 0 0 0;
+		}
+
+		&__text {
+			font-size: 16px;
+
+			&._large {
+				font-size: 22px;
 			}
 		}
 	}

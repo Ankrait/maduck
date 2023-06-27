@@ -67,6 +67,7 @@
 		align-items: center;
 		justify-content: center;
 
+		font-size: 18px;
 		font-weight: 600;
 		line-height: 130%;
 
@@ -137,7 +138,8 @@
 
 		&__button {
 			margin: 50px 0 0 0;
-			padding: 30px 15px;
+			padding: 17px 15px;
+			font-size: 16px;
 		}
 
 		&__image {
@@ -150,6 +152,29 @@
 	.general {
 		&__title {
 			font-size: 86px;
+		}
+	}
+}
+
+@media only screen and (max-width: $second-breakpoint) {
+	.general {
+		padding: 24px;
+
+		&__title {
+			font-size: 10vw;
+		}
+
+		&__info {
+			font-size: 16px;
+			margin: 14px 0 0 0;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.general {
+		&__title {
+			font-size: 58px;
 		}
 	}
 }

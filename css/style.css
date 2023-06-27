@@ -224,17 +224,20 @@ video {
           transform: rotate(45deg) translateX(-50%);
 }
 
+@media only screen and (max-width: 900px) {
+  .title {
+    font-size: 45px;
+  }
+  .btn {
+    font-size: 16px;
+  }
+}
 .container {
   max-width: 1448px;
   padding: 0 24px;
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 1200px) {
-  .container {
-    max-width: 948px;
-  }
-}
 .wrapper {
   overflow: hidden;
   display: -webkit-box;
@@ -249,6 +252,17 @@ video {
           flex: 1 1 100%;
 }
 
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 948px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container {
+    max-width: 600px;
+    padding: 0 16px;
+  }
+}
 .general {
   padding: 40px;
 }
@@ -325,6 +339,7 @@ video {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: 18px;
   font-weight: 600;
   line-height: 130%;
   text-transform: uppercase;
@@ -386,7 +401,8 @@ video {
   }
   .general__button {
     margin: 50px 0 0 0;
-    padding: 30px 15px;
+    padding: 17px 15px;
+    font-size: 16px;
   }
   .general__image {
     margin-left: -200px;
@@ -395,6 +411,23 @@ video {
 @media only screen and (max-width: 1000px) {
   .general__title {
     font-size: 86px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .general {
+    padding: 24px;
+  }
+  .general__title {
+    font-size: 10vw;
+  }
+  .general__info {
+    font-size: 16px;
+    margin: 14px 0 0 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .general__title {
+    font-size: 58px;
   }
 }
 .reasons {
@@ -460,7 +493,7 @@ video {
 }
 @media only screen and (max-width: 1200px) {
   .reasons {
-    margin: 80px 0 0 0;
+    margin: 90px 0 0 0;
   }
   .reasons__item {
     -webkit-box-flex: 0;
@@ -489,6 +522,15 @@ video {
   .reasons__item:nth-child(5) {
     border-left: 0;
     border-top: 0;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .reason-item__title {
+    font-size: 22px;
+  }
+  .reason-item__info {
+    font-size: 16px;
+    line-height: 1.25;
   }
 }
 .services {
@@ -574,6 +616,8 @@ video {
         -ms-flex: 0;
             flex: 0;
     text-align: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
   .services__information {
     -webkit-box-flex: 0;
@@ -588,6 +632,16 @@ video {
     -ms-flex-item-align: center;
         align-self: center;
     margin: 0 0 0 0;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .services__text {
+    margin: 6px 0 0 0;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .service-item__name {
+    font-size: 22px;
   }
 }
 .about {
@@ -669,6 +723,17 @@ video {
             flex: 0 0 100%;
   }
 }
+@media only screen and (max-width: 900px) {
+  .about__information {
+    margin: 8px 0 0 0;
+  }
+  .about__text {
+    font-size: 16px;
+  }
+  .about__text._large {
+    font-size: 22px;
+  }
+}
 .fields {
   margin: 180px 0 0 0;
 }
@@ -696,10 +761,13 @@ video {
 .fields__button {
   margin: 40px 0 0 0;
 }
-.fields__list {
+.fields__swiper {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 910px;
           flex: 0 1 910px;
+}
+.fields__list {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -860,19 +928,84 @@ video {
   .fields__text {
     margin: 6px auto 0 auto;
   }
-  .fields__list {
+  .fields__swiper {
     -webkit-box-flex: 0;
         -ms-flex: 0;
             flex: 0;
-    width: 100%;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
   }
   .fields__button {
     margin: 0 0 0 0;
   }
 }
 @media only screen and (max-width: 900px) {
+  .fields__text {
+    font-size: 16px;
+    max-width: 280px;
+  }
   .fields__list {
     grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .fields {
+    position: relative;
+  }
+  .fields__button {
+    display: none;
+  }
+  .fields .swiper-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    gap: 0;
+    max-width: 230px;
+    max-height: 230px;
+  }
+  .fields .swiper-slide {
+    width: 230px;
+    height: 230px;
+  }
+  .fields .swiper-pagination {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 12px;
+  }
+  .fields .swiper-bullet {
+    display: block;
+    border-radius: 50%;
+    background: #e0e0e0;
+    width: 4px;
+    height: 4px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 4px;
+            flex: 0 0 4px;
+  }
+  .fields .swiper-bullet._active {
+    width: 6px;
+    height: 6px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 6px;
+            flex: 0 0 6px;
+    background: #313131;
   }
 }
 .faq {
@@ -978,6 +1111,14 @@ video {
   }
   .faq__list {
     margin: 20px 0 0 0;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .item-faq__question {
+    font-size: 22px;
+  }
+  .item-faq__answer {
+    font-size: 16px;
   }
 }
 .contact {
@@ -1116,8 +1257,8 @@ video {
 }
 .form-contact__input {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 calc(50% - 12px);
-          flex: 0 1 calc(50% - 12px);
+      -ms-flex: 0 1 calc(50% - 10px);
+          flex: 0 1 calc(50% - 10px);
 }
 .form-contact__input input {
   width: 100%;
@@ -1200,5 +1341,27 @@ video {
   }
   .form-contact__button {
     margin: 12px 0 0 0;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .contact__text {
+    font-size: 16px;
+    max-width: 250px;
+    line-height: 1.25;
+    margin: 6px 0 0 0;
+  }
+  .contact__link {
+    margin-top: 14px;
+  }
+  .form-contact {
+    gap: 14px;
+  }
+  .form-contact__input {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 8px);
+            flex: 0 0 calc(50% - 8px);
+  }
+  .form-contact__input input, .form-contact__file, .form-contact__textarea textarea {
+    font-size: 16px;
   }
 }

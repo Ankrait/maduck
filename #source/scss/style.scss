@@ -1,6 +1,7 @@
 // breakpoints
 $first-breakpoint: 1200px;
 $second-breakpoint: 900px;
+$third-breakpoint: 700px;
 
 // colors
 $white: #fbfbfb;
@@ -18,12 +19,6 @@ $purple: #5a2fe1;
    margin: 0 auto;
 }
 
-@media only screen and (max-width: $first-breakpoint) {
-   .container {
-      max-width: 948px;
-   }
-}
-
 .wrapper {
    overflow: hidden;
    display: flex;
@@ -32,6 +27,18 @@ $purple: #5a2fe1;
 
 .main {
    flex: 1 1 100%;
+}
+
+@media only screen and (max-width: $first-breakpoint) {
+   .container {
+      max-width: 948px;
+   }
+}
+@media only screen and (max-width: $third-breakpoint) {
+   .container {
+      max-width: 600px;
+      padding: 0 16px;
+   }
 }
 
 @import "main/general";

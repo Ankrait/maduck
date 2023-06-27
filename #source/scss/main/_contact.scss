@@ -127,7 +127,7 @@
 
 	// .form-contact__input
 	&__input {
-		flex: 0 1 calc(50% - 12px);
+		flex: 0 1 calc(50% - 10px);
 
 		input {
 			width: 100%;
@@ -217,3 +217,31 @@
 	}
 }
 
+@media only screen and (max-width: $second-breakpoint) {
+	.contact {
+		&__text {
+			font-size: 16px;
+			max-width: 250px;
+			line-height: 1.25;
+			margin: 6px 0 0 0;
+		}
+
+		&__link {
+			margin-top: 14px;
+		}
+	}
+
+	.form-contact {
+		gap: 14px;
+
+		&__input {
+			flex: 0 0 calc(50% - 8px);
+		}
+
+		&__input input,
+		&__file,
+		&__textarea textarea {
+			font-size: 16px;
+		}
+	}
+}

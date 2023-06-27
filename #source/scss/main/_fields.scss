@@ -30,9 +30,14 @@
 		margin: 40px 0 0 0;
 	}
 
+	// .fields__swiper
+	&__swiper {
+		flex: 0 1 910px;
+	}
+
 	// .fields__list
 	&__list {
-		flex: 0 1 910px;
+		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
@@ -186,9 +191,9 @@
 			margin: 6px auto 0 auto;
 		}
 
-		&__list {
+		&__swiper {
 			flex: 0;
-			width: 100%;
+			align-self: stretch;
 		}
 
 		&__button {
@@ -199,8 +204,59 @@
 
 @media only screen and (max-width: $second-breakpoint) {
 	.fields {
+		&__text {
+			font-size: 16px;
+			max-width: 280px;
+		}
 		&__list {
 			grid-template-columns: repeat(3, 1fr);
+			gap: 14px;
+		}
+	}
+}
+
+@media only screen and (max-width: $third-breakpoint) {
+	.fields {
+		position: relative;
+		&__button {
+			display: none;
+		}
+
+		.swiper-wrapper {
+			display: flex;
+			align-items: stretch;
+			gap: 0;
+			max-width: 230px;
+			max-height: 230px;
+		}
+		.swiper-slide {
+			width: 230px;
+			height: 230px;
+		}
+		.swiper-pagination {
+			position: absolute;
+			bottom: -20px;
+			left: 50%;
+			transform: translateX(-50%);
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 12px;
+		}
+		.swiper-bullet {
+			display: block;
+			border-radius: 50%;
+			background: #e0e0e0;
+			width: 4px;
+			height: 4px;
+			flex: 0 0 4px;
+			&._active {
+				width: 6px;
+				height: 6px;
+				flex: 0 0 6px;
+				background: #313131;
+			}
 		}
 	}
 }

@@ -38,3 +38,38 @@ const burger = document.querySelector('.burger');
 burger.onclick = () => {
 	burger.classList.toggle('_active');
 };
+
+let init = false;
+let swiper;
+function swiperCard() {
+	if (window.innerWidth <= 700) {
+		if (init) return;
+
+		document.querySelector('.fields__swiper').classList.add('.swiper');
+		document.querySelector('.fields__list').classList.add('.swiper-wrapper');
+		document
+			.querySelectorAll('.fields__item')
+			.forEach((el) => el.classList.add('.swiper-slide'));
+		init = true;
+		swiper = new Swiper('.swiper', {
+			spaceBetween: 10,
+			allowTouchMove: true,
+			pagination: {
+				el: '.swiper-pagination',
+				bulletClass: 'swiper-bullet',
+				bulletActiveClass: '_active',
+				clickable: true,
+			},
+		});
+	} else if (init) {
+		swiper.destroy();
+		init = false;
+		document.querySelector('.fields__swiper').classList.remove('.swiper');
+		document.querySelector('.fields__list').classList.remove('.swiper-wrapper');
+		document
+			.querySelectorAll('.fields__item')
+			.forEach((el) => el.classList.remove('.swiper-slide'));
+	}
+}
+swiperCard();
+window.addEventListener('resize', swiperCard);
