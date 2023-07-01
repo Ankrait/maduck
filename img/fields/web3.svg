@@ -1,7 +1,11 @@
-<svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M55 100.833C80.3131 100.833 100.833 80.3131 100.833 55C100.833 29.687 80.3131 9.16669 55 9.16669C29.687 9.16669 9.16669 29.687 9.16669 55C9.16669 80.3131 29.687 100.833 55 100.833Z" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M41.2482 12.6501C32.3107 39.4168 32.8629 71.1334 41.8004 97.9001" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M68.2004 12.6501C77.1379 39.4168 77.6879 69.4834 68.7504 96.2501" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.0004 68.2001C37.767 77.1376 71.6837 77.1376 98.4504 68.2001" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.5504 41.2502C38.317 32.3127 71.1337 32.3125 97.9003 41.25" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#208;&#152;&#208;&#186;&#208;&#189;&#208;&#190;&#208;&#186;&#208;&#176;=WEB3">
+<g id="world">
+<path id="Vector" d="M60 110C87.6142 110 110 87.6142 110 60C110 32.3858 87.6142 10 60 10C32.3858 10 10 32.3858 10 60C10 87.6142 32.3858 110 60 110Z" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M44.9978 13.8C35.2478 43.0001 35.8502 77.6001 45.6002 106.8" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M74.4004 13.8C84.1504 43 84.7504 75.8 75.0004 105" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M12 74.4001C41.2 84.1501 78.2 84.1501 107.4 74.4001" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M12.6006 45.0001C41.8006 35.2501 77.6006 35.2499 106.801 44.9999" stroke="#5A2FE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
 </svg>

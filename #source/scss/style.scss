@@ -22,11 +22,23 @@ $purple: #5a2fe1;
 .wrapper {
    overflow: hidden;
    display: flex;
+   flex-direction: column;
    min-height: 100%;
 }
 
 .main {
    flex: 1 1 100%;
+	transition: transform 0.4s ease-in-out;
+}
+
+body.menu_active {
+   overflow: hidden;
+   .main {
+      transform: translate3d(0px, 122px, 0px) ;
+   }
+   .header {
+      transform: translate(0);
+   }
 }
 
 @media only screen and (max-width: $first-breakpoint) {
@@ -36,10 +48,12 @@ $purple: #5a2fe1;
 }
 @media only screen and (max-width: $third-breakpoint) {
    .container {
-      max-width: 600px;
+      max-width: 500px;
       padding: 0 16px;
    }
 }
+
+@import "header";
 
 @import "main/general";
 @import "main/reasons";

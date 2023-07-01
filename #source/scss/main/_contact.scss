@@ -164,18 +164,20 @@
 	// .form-contact__textarea
 	&__textarea {
 		flex: 0 0 100%;
+		font-size: 18px;
 
 		textarea {
 			padding: 18px 24px;
 			width: 100%;
-			resize: vertical;
+			max-height: 260px;
+			overflow: hidden;
+			resize: none;
 
 			background: #292929;
 			border: 1px solid #bcbcbc;
 			border-radius: 16px;
 
 			font-size: 18px;
-			line-height: 130%;
 			color: #bcbcbc;
 		}
 	}
@@ -242,6 +244,46 @@
 		&__file,
 		&__textarea textarea {
 			font-size: 16px;
+		}
+	}
+}
+
+@media only screen and (max-width: $second-breakpoint) {
+	.contact {
+		&__content {
+			flex-direction: column;
+			gap: 22px;
+		}
+
+		&__wrapper {
+			padding: 24px;
+		}
+
+		&__text {
+			margin: 2px 0 0 0;
+		}
+
+		&__link {
+			margin: 8px 0 0 0;
+			text-align: center;
+		}
+
+		&__buttons {
+			justify-content: start;
+		}
+		&__button {
+			font-size: 18px;
+		}
+	}
+
+	.form-contact {
+		&__input {
+			flex: 0 0 100%;
+		}
+		&__button {
+			max-width: 100%;
+			width: 100%;
+			flex: 0 0 100%;
 		}
 	}
 }

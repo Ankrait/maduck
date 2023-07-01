@@ -78,7 +78,6 @@
 
 		&__item {
 			flex: 0 0 50%;
-			border: 1px solid red;
 
 			&:nth-child(1),
 			&:nth-child(2),
@@ -123,6 +122,37 @@
 		&__info {
 			font-size: 16px;
 			line-height: 1.25;
+		}
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.reason-item {
+		&__title {
+			font-size: 20px;
+		}
+		&__info {
+			max-width: 300px;
+		}
+	}
+}
+
+@media only screen and (max-width: $third-breakpoint) {
+	.reasons {
+		margin: 104px 0 0 0;
+
+		&__item {
+			flex: 0 0 100%;
+
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6) {
+				border: 1px solid $gray;
+				border-radius: 16px;
+			}
 		}
 	}
 }

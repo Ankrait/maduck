@@ -160,6 +160,10 @@
 	.general {
 		padding: 24px;
 
+		&__content {
+			border-radius: 25px;
+		}
+
 		&__title {
 			font-size: 10vw;
 		}
@@ -175,6 +179,31 @@
 	.general {
 		&__title {
 			font-size: 58px;
+		}
+	}
+}
+
+@media only screen and (max-width: $third-breakpoint) {
+	.general {
+		padding: 16px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.general {
+		&__container {
+			max-width: 500px;
+			flex-direction: column;
+		}
+
+		&__button,
+		&__text {
+			margin: 35px 0 0 0;
+		}
+
+		&__image {
+			flex: 0 0 290px;
+			margin: -55px 0 0 0;
 		}
 	}
 }

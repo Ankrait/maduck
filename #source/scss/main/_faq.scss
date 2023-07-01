@@ -40,15 +40,19 @@
 	// .item-faq__header
 	&__header {
 		cursor: pointer;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 15px;
+
 		padding: 0;
 		@include faq_transition(padding);
 	}
 
 	// .item-faq__plus
 	&__plus {
+		flex: 0 0 20px;
 		width: 20px;
 		height: 20px;
 		position: relative;
@@ -83,6 +87,7 @@
 
 	// .item-faq__answer
 	&__answer {
+		margin: 0 35px 0 0;
 		font-weight: 400;
 		font-size: 18px;
 		line-height: 130%;
@@ -120,6 +125,14 @@
 		}
 		&__answer {
 			font-size: 16px;
+		}
+	}
+}
+
+@media only screen and (max-width: $third-breakpoint) {
+	.item-faq {
+		&__question {
+			font-size: 18px;
 		}
 	}
 }
