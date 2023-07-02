@@ -2,30 +2,18 @@
 	width: 100%;
 	height: 122px;
 
-	position: absolute;
+	position: fixed;
+	background: $white;
+	z-index: 2;
 	transform: translateY(-100%);
-	transition: transform 0.4s ease-in-out;
-
-	&::after {
-		content: "";
-		position: absolute;
-		top: 122px;
-		left: 0;
-		width: 100%;
-		height: calc(100vh - 122px);
-
-		border-radius: 15px;
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(<path-to-image>),
-			lightgray 0.778px 0px / 113.58% 100% no-repeat;
-		padding: 30px;
-	}
+	transition: transform 0.4s cubic-bezier(0.69, 0.09, 0.44, 1);
 
 	// .header__container
 	&__container {
 		height: 100%;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		gap: 60px;
 	}
 
 	// .header__logo
@@ -36,6 +24,8 @@
 
 	// .header__menu
 	&__menu {
+		margin: 0 5% 0 0;
+		flex: 1 1 auto;
 	}
 
 	// .header__button
@@ -86,12 +76,97 @@
 .menu {
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	gap: 60px;
 	// .menu__item
 	&__item {
+		cursor: pointer;
 		color: $black;
 		font-size: 24px;
 		font-weight: 500;
 		line-height: 130%;
+
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 1px;
+
+			left: 50%;
+			transform: translate(-50%);
+			bottom: 0;
+
+			background: $black;
+
+			max-width: 0;
+			transition: max-width 0.2s ease;
+		}
+
+		&:hover::before {
+			max-width: 100%;
+		}
+	}
+}
+
+.site-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&-wrapper {
+		position: sticky;
+		z-index: 3;
+		top: 40px;
+
+		width: 100%;
+	}
+
+	&__logo--img {
+		display: none;
+	}
+
+	&._fixed {
+		animation: site_header_animation 0.4s ease;
+
+		.site-header__logo {
+			display: none;
+		}
+		.site-header__logo--img {
+			display: block;
+		}
+
+		.burger {
+			&::before,
+			&::after,
+			span {
+				background-color: $black;
+			}
+		}
+
+		& > div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 10px;
+			background: #ececec;
+			&:first-child {
+				padding: 12px;
+			}
+			&:last-child {
+				padding: 16px 14px;
+			}
+		}
+	}
+}
+
+@keyframes site_header_animation {
+	0% {
+		width: 200px;
+		transform: translateX(-20%);
+	}
+	100% {
+		width: 100%;
+		transform: translateX(0);
 	}
 }

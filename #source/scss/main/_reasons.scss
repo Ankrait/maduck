@@ -1,5 +1,5 @@
 .reasons {
-	margin: 150px 0 0 0;
+	margin: 200px 0 0 0;
 	// .reasons__container
 	&__container {
 	}
@@ -74,7 +74,7 @@
 
 @media only screen and (max-width: $first-breakpoint) {
 	.reasons {
-		margin: 90px 0 0 0;
+		margin: 120px 0 0 0;
 
 		&__item {
 			flex: 0 0 50%;

@@ -28,13 +28,73 @@ $purple: #5a2fe1;
 
 .main {
    flex: 1 1 100%;
-	transition: transform 0.4s ease-in-out;
+   transition: transform 0.4s ease-in-out;
+}
+
+.scroll {
+   transition: all 0.4s ease-in-out;
+
+   position: fixed;
+   overflow-y: scroll;
+   top: 0;
+   bottom: 0;
+
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100%;
+
+   transition: all 0.3s ease-in 0.2s, transform 0.3s ease-in 0.2s, overflow-y 0s ease 0.3s;
+
+   &__bg {
+      position: fixed;
+      z-index: 3;
+
+      top: 122px;
+      bottom: 20px;
+      left: 50%;
+
+      transform: translateX(-50%) scale3d(0.9, 0.9, 1);
+
+      max-width: 1842px;
+      width: 100%;
+
+      border-radius: 15px;
+
+      background: linear-gradient(0deg, rgba(0, 0, 0) 0%, rgba(0, 0, 0) 100%),
+         lightgray 0.778px 0px / 113.58% 100% no-repeat;
+      box-shadow: 0 0 8px 2px $black;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease-in;
+   }
 }
 
 body.menu_active {
    overflow: hidden;
-   .main {
-      transform: translate3d(0px, 122px, 0px) ;
+   .general {
+      padding: 0;
+      transition: padding 0.3s ease 0.1s;
+   }
+   .scroll {
+      top: 122px;
+      bottom: 20px;
+
+      max-width: 1842px;
+      width: 100%;
+
+      transform: translateX(-50%) scale3d(0.9, 0.9, 1);
+
+      overflow-y: hidden;
+      overflow-x: hidden;
+      border-radius: 15px;
+
+      transition: top 0.3s ease-out, transform 0.3s ease-out;
+
+      &__bg {
+         pointer-events: all;
+         opacity: 0.7;
+         transition: opacity 0.2s ease-out 0.2s;
+      }
    }
    .header {
       transform: translate(0);
