@@ -18,6 +18,8 @@
 
 	// .header__logo
 	&__logo {
+		cursor: pointer;
+
 		font-size: 30px;
 		color: $black;
 	}
@@ -53,6 +55,7 @@
 		position: relative;
 		height: 32px;
 		width: 32px;
+		flex: 0 0 32px;
 
 		&::after,
 		&::before {
@@ -78,6 +81,7 @@
 	align-items: center;
 	justify-content: flex-end;
 	gap: 60px;
+
 	// .menu__item
 	&__item {
 		cursor: pointer;
@@ -123,11 +127,12 @@
 	}
 
 	&__logo--img {
+		cursor: pointer;
 		display: none;
 	}
 
 	&._fixed {
-		animation: site_header_animation 0.4s ease;
+		animation: site_header_animation 0.6s ease;
 
 		.site-header__logo {
 			display: none;
@@ -163,10 +168,91 @@
 @keyframes site_header_animation {
 	0% {
 		width: 200px;
-		transform: translateX(-20%);
+		transform: translate3d(-50%, -200%, 0);
 	}
 	100% {
 		width: 100%;
-		transform: translateX(0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@media only screen and (max-width: $first-breakpoint) {
+	.header {
+		height: 150px;
+
+		&__container {
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-content: center;
+			gap: 30px;
+		}
+		&__menu {
+			flex: 0 0 100%;
+			margin: 0 0 0 0;
+		}
+	}
+
+	.menu {
+		justify-content: space-between;
+		gap: 40px;
+	}
+}
+
+@media only screen and (max-width: $third-breakpoint) {
+	.header {
+		height: 230px;
+
+		&__container {
+			justify-content: space-between;
+			display: grid;
+			gap: 30px;
+			grid-template: repeat(3, min-content) / 1fr min-content;
+		}
+
+		&__logo {
+			justify-self: start;
+		}
+
+		&__close {
+			justify-self: end;
+		}
+
+		&__menu {
+			grid-column: span 2;
+		}
+
+		&__button {
+			grid-column: span 2;
+			justify-self: center;
+		}
+	}
+}
+
+@media only screen and (max-width: 458px) {
+	.menu {
+		justify-content: space-between;
+		gap: 20px;
+
+		&__item {
+			font-size: 20px;
+		}
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	.header {
+		&__container {
+			gap: 20px;
+		}
+	}
+
+	.header__button {
+		font-size: 14px;
+	}
+
+	.menu {
+		&__item {
+			font-size: 16px;
+		}
 	}
 }

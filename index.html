@@ -4,7 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Разработка MVP, мобильных приложений. Создание сайтов и web-сервисов. Дизайн мобильных приложений и сайтов." />
+		<meta name="keywords" content="web приложения сайт разработка дизайн заказ" />
+
 		<title>Mad Duck</title>
+
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 		<link
 			rel="stylesheet"
@@ -18,14 +24,19 @@
 		<div class="wrapper">
 			<header class="header">
 				<div class="header__container container">
-					<div class="header__logo logo">MAD DUCK</div>
-					<nav class="header__menu menu">
-						<div class="menu__item">Услуги</div>
-						<div class="menu__item">FAQ</div>
-						<div class="menu__item">О нас</div>
-						<div class="menu__item">Контакты</div>
-					</nav>
-					<div class="header__button">Назначить встречу</div>
+					<h1 data-scroll="general" class="header__logo logo">MAD DUCK</h1>
+					<ul data-move=".header__container, -1, 1200" class="header__menu menu">
+						<li data-scroll="services" class="menu__item">Услуги</li>
+						<li data-scroll="faq" class="menu__item">FAQ</li>
+						<li data-scroll="about" class="menu__item">О нас</li>
+						<li data-scroll="contact" class="menu__item">Контакты</li>
+					</ul>
+					<div
+						data-move=".header__container, -1, 700"
+						data-scroll="contact"
+						class="header__button">
+						Назначить встречу
+					</div>
 					<div class="header__close"></div>
 				</div>
 			</header>
@@ -40,7 +51,10 @@
 									<div class="general__header site-header">
 										<div>
 											<div class="site-header__logo logo">Mad Duck</div>
-											<div class="site-header__logo--img">
+											<div
+												data-scroll="general"
+												data-nodelay="true"
+												class="site-header__logo--img">
 												<img src="img/logo.svg" alt="logo" />
 											</div>
 										</div>
@@ -66,7 +80,7 @@
 					</div>
 					<div class="reasons">
 						<div class="reasons__container container">
-							<div class="reasons__title title">Почему мы?</div>
+							<h2 class="reasons__title title">Почему мы?</h2>
 							<div class="reasons__list">
 								<div class="reasons__item reason-item">
 									<div class="reason-item__title">Адекватная цена</div>
@@ -111,7 +125,7 @@
 					<div class="services">
 						<div class="services__container container">
 							<div class="services__content">
-								<div class="services__title title">Наши услуги</div>
+								<h2 class="services__title title">Наши услуги</h2>
 								<div class="services__text">
 									Проектируем современные и удобные интерфейсы, которые соответствуют всем
 									требованиям.
@@ -147,7 +161,7 @@
 					<div class="about">
 						<div class="about__container container">
 							<div class="about__wrapper">
-								<div class="about__title title _white">О нас</div>
+								<h2 class="about__title title _white">О нас</h2>
 								<div class="about__information">
 									<div class="about__text">
 										<p>
@@ -170,7 +184,7 @@
 					<div class="fields">
 						<div class="fields__container container">
 							<div class="fields__content">
-								<div class="fields__title title">С кем мы работаем</div>
+								<h2 class="fields__title title">С кем мы работаем</h2>
 								<div class="fields__text">
 									Также мы работаем со всеми, лишь бы деньги платили, риальна
 								</div>
@@ -180,7 +194,7 @@
 									Работать с нами
 								</button>
 							</div>
-							<div class="swiper-container">
+							<div class="fields__swiper-container">
 								<div class="fields__swiper">
 									<div class="fields__list">
 										<div class="fields__item field-item">
@@ -305,7 +319,7 @@
 					</div>
 					<div class="faq">
 						<div class="faq__container container">
-							<div class="faq__title title">Q&A</div>
+							<h2 class="faq__title title">Q&A</h2>
 							<div class="faq__list">
 								<div class="faq__item item-faq">
 									<div class="item-faq__header">
@@ -356,7 +370,7 @@
 							<div class="contact__wrapper">
 								<div class="contact__content">
 									<div>
-										<div class="contact__title title _white">Работать с нами</div>
+										<h2 class="contact__title title _white">Работать с нами</h2>
 										<div class="contact__text">
 											Вы можете оставить заявку или напрямую написать нам
 										</div>

@@ -24,7 +24,7 @@ const moveBlock = (block, to, pos_i, max_width) => {
 
 const dataMoveBlock = document.querySelectorAll('[data-move]');
 dataMoveBlock.forEach((el) => {
-	const data = el.dataset.move.split(',').map(el => el.trim());
+	const data = el.dataset.move.split(',').map((el) => el.trim());
 
 	if (data.length === 3) {
 		const to = document.querySelector(data[0]);

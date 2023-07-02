@@ -30,8 +30,8 @@
 		margin: 40px 0 0 0;
 	}
 
-	// .fields__swiper
-	&__swiper {
+	// .fields__swiper-container
+	&__swiper-container {
 		flex: 0 1 910px;
 	}
 
@@ -136,7 +136,7 @@
 			margin: 6px auto 0 auto;
 		}
 
-		&__swiper {
+		&__swiper-container {
 			flex: 0;
 			align-self: stretch;
 		}
@@ -164,7 +164,8 @@
 	.fields {
 		position: relative;
 
-		.swiper-container {
+		&__swiper-container {
+			align-self: center;
 			position: relative;
 			margin: 0 0 20px 0;
 		}

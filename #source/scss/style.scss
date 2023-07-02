@@ -50,10 +50,10 @@ $purple: #5a2fe1;
       z-index: 3;
 
       top: 122px;
-      bottom: 20px;
-      left: 50%;
+      bottom: 0;
 
-      transform: translateX(-50%) scale3d(0.9, 0.9, 1);
+      left: 50%;
+      transform: translateX(-50%) scale3d(0.95, 0.95, 1);
 
       max-width: 1842px;
       width: 100%;
@@ -77,12 +77,11 @@ body.menu_active {
    }
    .scroll {
       top: 122px;
-      bottom: 20px;
 
       max-width: 1842px;
       width: 100%;
 
-      transform: translateX(-50%) scale3d(0.9, 0.9, 1);
+      transform: translateX(-50%) scale3d(0.95, 0.95, 1);
 
       overflow-y: hidden;
       overflow-x: hidden;
@@ -105,11 +104,36 @@ body.menu_active {
    .container {
       max-width: 948px;
    }
+
+   .scroll {
+      &__bg {
+         top: 150px;
+      }
+   }
+
+   body.menu_active {
+      .scroll {
+         top: 150px;
+      }
+   }
 }
+
 @media only screen and (max-width: $third-breakpoint) {
    .container {
       max-width: 500px;
       padding: 0 16px;
+   }
+
+   .scroll {
+      &__bg {
+         top: 230px;
+      }
+   }
+
+   body.menu_active {
+      .scroll {
+         top: 230px;
+      }
    }
 }
 
