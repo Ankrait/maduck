@@ -387,7 +387,7 @@
 									</div>
 								</div>
 								<div class="contact__form">
-									<form method="post" action="send-message-to-telegram.php" class="form-contact">
+									<form enctype="multipart/form-data" class="form-contact">
 										<div class="form-contact__input">
 											<input maxlength="30" type="text" name="Name" placeholder="Имя" />
 										</div>
@@ -408,7 +408,7 @@
 												placeholder="Опишите ваш проект"></textarea>
 										</div>
 										<div class="form-contact__file">
-											<input type="file" name="File" id="input-file" />
+											<input type="file" name="files[]" id="input-file" multiple />
 											<label for="input-file">
 												<img src="img/file-upload.svg" alt="Загрузка файла" />
 												Загрузить файл

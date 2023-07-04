@@ -140,23 +140,37 @@ scroll_links.forEach((link) => {
 
 // *
 // * отправление запроса к php
-// const form = document.querySelector('.form-contact');
-// form.addEventListener('submit', (e) => {
-// 	e.preventDefault();
-// 	const data = new FormData(form);
-// 	console.log(data);
-// 	for (const [name, value] of data) {
-// 		console.log(name, ':', value);
-// 	}
+const form = document.querySelector('.form-contact');
+const file_input = document.getElementById('input-file');
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	const data = new FormData(form);
 
-// 	fetch('send-message-to-telegram.php', {
-// 		method: 'POST',
-// 		body: data,
-// 	}).then((response) => {
-// 		if (response.ok) {
-// 			alert('success');
-// 		} else {
-// 			alert('error');
-// 		}
-// 	});
-// });
+	if (!form.Name.value) {
+		alert('Введите имя');
+		return;
+	}
+	if (!form.Phone.value) {
+		alert('Введите телефон');
+		return;
+	}
+
+	fetch('send-message-to-telegram.php', {
+		method: 'POST',
+		body: data,
+	}).then((response) => {
+		console.log(response);
+		if (response.ok) {
+			alert('success');
+		} else {
+			alert('error');
+		}
+	});
+});
+file_input.addEventListener('change', (e) => {
+	if (file_input.files.length > 2) {
+		alert('Не больше двух файлов');
+		file_input.value = '';
+	}
+	console.log(file_input?.files);
+});
