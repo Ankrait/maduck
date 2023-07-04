@@ -261,6 +261,17 @@ video {
   transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 948px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container {
+    max-width: 500px;
+    padding: 0 16px;
+  }
+}
 .scroll {
   -webkit-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -270,10 +281,11 @@ video {
   top: 0;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
   width: 100%;
+  height: 100%;
+  max-height: 100%;
   -webkit-transition: all 0.3s ease-in 0.2s, overflow-y 0s ease 0.3s, -webkit-transform 0.3s ease-in 0.2s;
   transition: all 0.3s ease-in 0.2s, overflow-y 0s ease 0.3s, -webkit-transform 0.3s ease-in 0.2s;
   -o-transition: all 0.3s ease-in 0.2s, transform 0.3s ease-in 0.2s, overflow-y 0s ease 0.3s;
@@ -283,14 +295,15 @@ video {
 .scroll__bg {
   position: fixed;
   z-index: 3;
-  top: 122px;
+  top: 0;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%) scale3d(0.95, 0.95, 1);
-          transform: translateX(-50%) scale3d(0.95, 0.95, 1);
+  -webkit-transform: translate3d(-50%, 122px, 0) scale3d(0.9, 0.9, 1);
+          transform: translate3d(-50%, 122px, 0) scale3d(0.9, 0.9, 1);
+  max-height: calc(100vh - 150px);
   max-width: 1842px;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 42px;
   background: -webkit-gradient(linear, left bottom, left top, from(rgb(0, 0, 0)), to(rgb(0, 0, 0))), lightgray 0.778px 0px/113.58% 100% no-repeat;
   background: -o-linear-gradient(bottom, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%), lightgray 0.778px 0px/113.58% 100% no-repeat;
   background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%), lightgray 0.778px 0px/113.58% 100% no-repeat;
@@ -313,23 +326,23 @@ body.menu_active .general {
   transition: padding 0.3s ease 0.1s;
 }
 body.menu_active .scroll {
-  top: 122px;
   max-width: 1842px;
   width: 100%;
-  -webkit-transform: translateX(-50%) scale3d(0.95, 0.95, 1);
-          transform: translateX(-50%) scale3d(0.95, 0.95, 1);
+  -webkit-transform: translate3d(-50%, 122px, 0) scale3d(0.9, 0.9, 1);
+          transform: translate3d(-50%, 122px, 0) scale3d(0.9, 0.9, 1);
+  max-height: calc(100vh - 150px);
   overflow-y: hidden;
   overflow-x: hidden;
-  border-radius: 15px;
-  -webkit-transition: top 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  transition: top 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  -o-transition: top 0.3s ease-out, transform 0.3s ease-out;
-  transition: top 0.3s ease-out, transform 0.3s ease-out;
-  transition: top 0.3s ease-out, transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  border-radius: 42px;
+  -webkit-transition: max-height 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  transition: max-height 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -o-transition: max-height 0.3s ease-out, transform 0.3s ease-out;
+  transition: max-height 0.3s ease-out, transform 0.3s ease-out;
+  transition: max-height 0.3s ease-out, transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 body.menu_active .scroll__bg {
   pointer-events: all;
-  opacity: 0.7;
+  opacity: 0.6;
   -webkit-transition: opacity 0.2s ease-out 0.2s;
   -o-transition: opacity 0.2s ease-out 0.2s;
   transition: opacity 0.2s ease-out 0.2s;
@@ -341,26 +354,35 @@ body.menu_active .header {
 }
 
 @media only screen and (max-width: 1200px) {
-  .container {
-    max-width: 948px;
-  }
   .scroll__bg {
-    top: 150px;
+    border-radius: 25px;
   }
   body.menu_active .scroll {
-    top: 150px;
+    border-radius: 25px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .scroll__bg {
+    -webkit-transform: translate3d(-50%, 150px, 0) scale3d(0.95, 0.95, 1);
+            transform: translate3d(-50%, 150px, 0) scale3d(0.95, 0.95, 1);
+    max-height: calc(100vh - 170px);
+  }
+  body.menu_active .scroll {
+    -webkit-transform: translate3d(-50%, 150px, 0) scale3d(0.95, 0.95, 1);
+            transform: translate3d(-50%, 150px, 0) scale3d(0.95, 0.95, 1);
+    max-height: calc(100vh - 170px);
   }
 }
 @media only screen and (max-width: 700px) {
-  .container {
-    max-width: 500px;
-    padding: 0 16px;
-  }
   .scroll__bg {
-    top: 230px;
+    -webkit-transform: translate3d(-50%, 180px, 0) scale3d(0.95, 0.95, 1);
+            transform: translate3d(-50%, 180px, 0) scale3d(0.95, 0.95, 1);
+    max-height: calc(100vh - 200px);
   }
   body.menu_active .scroll {
-    top: 230px;
+    -webkit-transform: translate3d(-50%, 180px, 0) scale3d(0.95, 0.95, 1);
+            transform: translate3d(-50%, 180px, 0) scale3d(0.95, 0.95, 1);
+    max-height: calc(100vh - 200px);
   }
 }
 .header {
@@ -507,8 +529,8 @@ body.menu_active .header {
   display: none;
 }
 .site-header._fixed {
-  -webkit-animation: site_header_animation 0.6s ease;
-          animation: site_header_animation 0.6s ease;
+  -webkit-animation: site_header_animation 0.4s ease;
+          animation: site_header_animation 0.4s ease;
 }
 .site-header._fixed .site-header__logo {
   display: none;
@@ -542,27 +564,19 @@ body.menu_active .header {
 
 @-webkit-keyframes site_header_animation {
   0% {
-    width: 200px;
-    -webkit-transform: translate3d(-50%, -200%, 0);
-            transform: translate3d(-50%, -200%, 0);
+    opacity: 0;
   }
   100% {
-    width: 100%;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
 @keyframes site_header_animation {
   0% {
-    width: 200px;
-    -webkit-transform: translate3d(-50%, -200%, 0);
-            transform: translate3d(-50%, -200%, 0);
+    opacity: 0;
   }
   100% {
-    width: 100%;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -594,14 +608,14 @@ body.menu_active .header {
 }
 @media only screen and (max-width: 700px) {
   .header {
-    height: 230px;
+    height: 180px;
   }
   .header__container {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
     display: grid;
-    gap: 30px;
+    gap: 20px;
     grid-template: repeat(3, -webkit-min-content)/1fr -webkit-min-content;
     grid-template: repeat(3, min-content)/1fr min-content;
   }
@@ -631,9 +645,6 @@ body.menu_active .header {
   }
 }
 @media only screen and (max-width: 350px) {
-  .header__container {
-    gap: 20px;
-  }
   .header__button {
     font-size: 14px;
   }
@@ -1170,7 +1181,7 @@ body.menu_active .header {
   }
   .about__information {
     margin: 2px 0 0 0;
-    gap: 22px;
+    gap: 2px;
   }
   .about__text._large {
     font-size: 20px;
@@ -1347,6 +1358,7 @@ body.menu_active .header {
   }
   .fields .swiper-pagination {
     display: block;
+    overflow: hidden;
     position: absolute;
     width: 100%;
     bottom: -20px;
@@ -1544,12 +1556,38 @@ body.menu_active .header {
   width: 6px;
   height: 6px;
   border-radius: 50%;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .contact__button._tg::before {
   background: #24a1de;
 }
 .contact__button._wa::before {
   background: #44ec62;
+}
+.contact__button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  bottom: 0;
+  background: #fbfbfb;
+  max-width: 0;
+  -webkit-transition: max-width 0.2s ease;
+  -o-transition: max-width 0.2s ease;
+  transition: max-width 0.2s ease;
+}
+.contact__button:hover::after {
+  max-width: 100%;
+}
+.contact__button:hover::before {
+  width: 8px;
+  height: 8px;
 }
 .contact__form {
   -webkit-box-flex: 0;

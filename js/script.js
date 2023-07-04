@@ -137,3 +137,26 @@ scroll_links.forEach((link) => {
 	const block = document.querySelector(`.${link.dataset.scroll}`);
 	scrollTo(block, link);
 });
+
+// *
+// * отправление запроса к php
+// const form = document.querySelector('.form-contact');
+// form.addEventListener('submit', (e) => {
+// 	e.preventDefault();
+// 	const data = new FormData(form);
+// 	console.log(data);
+// 	for (const [name, value] of data) {
+// 		console.log(name, ':', value);
+// 	}
+
+// 	fetch('send-message-to-telegram.php', {
+// 		method: 'POST',
+// 		body: data,
+// 	}).then((response) => {
+// 		if (response.ok) {
+// 			alert('success');
+// 		} else {
+// 			alert('error');
+// 		}
+// 	});
+// });

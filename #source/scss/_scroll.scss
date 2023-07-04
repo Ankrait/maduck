@@ -1,0 +1,116 @@
+.scroll {
+	transition: all 0.4s ease-in-out;
+
+	position: fixed;
+	overflow-y: scroll;
+	top: 0;
+	bottom: 0;
+
+	left: 50%;
+	transform: translate3d(-50%, 0, 0);
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+
+	transition: all 0.3s ease-in 0.2s, transform 0.3s ease-in 0.2s, overflow-y 0s ease 0.3s;
+
+	&__bg {
+		position: fixed;
+		z-index: 3;
+
+		top: 0;
+		bottom: 0;
+
+		left: 50%;
+		transform: translate3d(-50%, 122px, 0) scale3d(0.9, 0.9, 1);
+		max-height: calc(100vh - 150px);
+
+		max-width: 1842px;
+		width: 100%;
+
+		border-radius: 42px;
+
+		background: linear-gradient(0deg, rgba(0, 0, 0) 0%, rgba(0, 0, 0) 100%),
+			lightgray 0.778px 0px / 113.58% 100% no-repeat;
+		box-shadow: 0 0 8px 2px $black;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.4s ease-in;
+	}
+}
+
+body.menu_active {
+	overflow: hidden;
+	.general {
+		padding: 0;
+		transition: padding 0.3s ease 0.1s;
+	}
+	.scroll {
+		max-width: 1842px;
+		width: 100%;
+
+		transform: translate3d(-50%, 122px, 0) scale3d(0.9, 0.9, 1);
+		max-height: calc(100vh - 150px);
+
+		overflow-y: hidden;
+		overflow-x: hidden;
+		border-radius: 42px;
+
+		transition: max-height 0.3s ease-out, transform 0.3s ease-out;
+
+		&__bg {
+			pointer-events: all;
+			opacity: 0.6;
+			transition: opacity 0.2s ease-out 0.2s;
+		}
+	}
+	.header {
+		transform: translate(0);
+	}
+}
+
+@media only screen and (max-width: $first-breakpoint) {
+	.scroll {
+		&__bg {
+			border-radius: 25px;
+		}
+	}
+
+	body.menu_active {
+		.scroll {
+			border-radius: 25px;
+		}
+	}
+}
+
+@media only screen and (max-width: $second-breakpoint) {
+	.scroll {
+		&__bg {
+			transform: translate3d(-50%, 150px, 0) scale3d(0.95, 0.95, 1);
+			max-height: calc(100vh - 170px);
+		}
+	}
+
+	body.menu_active {
+		.scroll {
+			transform: translate3d(-50%, 150px, 0) scale3d(0.95, 0.95, 1);
+			max-height: calc(100vh - 170px);
+		}
+	}
+}
+
+@media only screen and (max-width: $third-breakpoint) {
+	.scroll {
+		&__bg {
+			transform: translate3d(-50%, 180px, 0) scale3d(0.95, 0.95, 1);
+			max-height: calc(100vh - 200px);
+		}
+	}
+
+	body.menu_active {
+		.scroll {
+			transform: translate3d(-50%, 180px, 0) scale3d(0.95, 0.95, 1);
+			max-height: calc(100vh - 200px);
+		}
+	}
+}

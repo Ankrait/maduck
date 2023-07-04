@@ -1,5 +1,6 @@
 .fields {
 	margin: 180px 0 0 0;
+
 	// .fields__container
 	&__container {
 		display: flex;
@@ -182,6 +183,8 @@
 
 		.swiper-pagination {
 			display: block;
+			overflow: hidden;
+
 			position: absolute;
 			width: 100%;
 			bottom: -20px;

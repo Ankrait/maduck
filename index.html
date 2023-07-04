@@ -66,7 +66,7 @@
 									</div>
 								</div>
 								<div class="general__text">
-									<h2 class="general__title">превращаем ваши идеи в реальность</h2>
+									<h2 class="general__title">превращаем ваши идеи в&nbsp;реальность</h2>
 									<div class="general__info">
 										Создаем сайты и разрабатываем приложения для iOS, Android
 									</div>
@@ -197,7 +197,7 @@
 							<div class="fields__swiper-container">
 								<div class="fields__swiper">
 									<div class="fields__list">
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide1">
 											<div class="field-item__front">
 												<div class="field-item__name">Идейные стартапы</div>
 												<div class="field-item__image">
@@ -209,7 +209,7 @@
 												отечетсвенный, Артем - отечетсвенный MadDuck = отечетсвенный
 											</div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide2">
 											<div class="field-item__front">
 												<div class="field-item__name">Рестораны и&nbsp;доставка еды</div>
 												<div class="field-item__image">
@@ -221,7 +221,7 @@
 												подтвердят
 											</div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide3">
 											<div class="field-item__front">
 												<div class="field-item__name">Авто и&nbsp;транспорт</div>
 												<div class="field-item__image">
@@ -230,7 +230,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide4">
 											<div class="field-item__front">
 												<div class="field-item__name">Игровые проекты</div>
 												<div class="field-item__image">
@@ -239,7 +239,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide5">
 											<div class="field-item__front">
 												<div class="field-item__name">Маркетплейсы и&nbsp;агрегаторы</div>
 												<div class="field-item__image">
@@ -248,7 +248,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide6">
 											<div class="field-item__front">
 												<div class="field-item__name">Web3 продукты</div>
 												<div class="field-item__image">
@@ -257,7 +257,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide7">
 											<div class="field-item__front">
 												<div class="field-item__name">Социальные сети</div>
 												<div class="field-item__image">
@@ -266,7 +266,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide8">
 											<div class="field-item__front">
 												<div class="field-item__name">Фитнес и&nbsp;спорт</div>
 												<div class="field-item__image">
@@ -275,7 +275,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide9">
 											<div class="field-item__front">
 												<div class="field-item__name">HR и&nbsp;обучение персонала</div>
 												<div class="field-item__image">
@@ -284,7 +284,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide10">
 											<div class="field-item__front">
 												<div class="field-item__name">Системы СКУД</div>
 												<div class="field-item__image">
@@ -293,7 +293,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide11">
 											<div class="field-item__front">
 												<div class="field-item__name">Медицина и&nbsp;здоровье</div>
 												<div class="field-item__image">
@@ -302,7 +302,7 @@
 											</div>
 											<div class="field-item__back"></div>
 										</div>
-										<div class="fields__item field-item">
+										<div class="fields__item field-item" data-hash="slide12">
 											<div class="field-item__front">
 												<div class="field-item__name">Образование и&nbsp;курсы</div>
 												<div class="field-item__image">
@@ -376,20 +376,27 @@
 										</div>
 									</div>
 									<div class="contact__buttons">
-										<div class="contact__button _tg">Telegram</div>
-										<div class="contact__button _wa">WhatsApp</div>
+										<a href="http://T.me/Maduck_dev" class="contact__button _tg"
+											>Telegram</a
+										>
+										<a
+											href="https://wa.me/message/FWEZ2HPQB24JL1"
+											class="contact__button _wa"
+											>WhatsApp</a
+										>
 									</div>
 								</div>
 								<div class="contact__form">
-									<form class="form-contact">
+									<form method="post" action="send-message-to-telegram.php" class="form-contact">
 										<div class="form-contact__input">
-											<input maxlength="30" type="text" placeholder="Имя" />
+											<input maxlength="30" type="text" name="Name" placeholder="Имя" />
 										</div>
 										<div class="form-contact__input">
 											<input
 												maxlength="16"
 												class="form-contact__input tel-input"
 												type="text"
+												name="Phone"
 												placeholder="Телефон" />
 										</div>
 										<div class="form-contact__textarea">
@@ -397,10 +404,11 @@
 												aria-placeholder="Опишите проект"
 												maxlength="600"
 												class="form-contact__textarea"
+												name="Description"
 												placeholder="Опишите ваш проект"></textarea>
 										</div>
 										<div class="form-contact__file">
-											<input type="file" id="input-file" />
+											<input type="file" name="File" id="input-file" />
 											<label for="input-file">
 												<img src="img/file-upload.svg" alt="Загрузка файла" />
 												Загрузить файл

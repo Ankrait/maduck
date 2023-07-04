@@ -132,7 +132,7 @@
 	}
 
 	&._fixed {
-		animation: site_header_animation 0.6s ease;
+		animation: site_header_animation 0.4s ease;
 
 		.site-header__logo {
 			display: none;
@@ -167,12 +167,10 @@
 
 @keyframes site_header_animation {
 	0% {
-		width: 200px;
-		transform: translate3d(-50%, -200%, 0);
+		opacity: 0;
 	}
 	100% {
-		width: 100%;
-		transform: translate3d(0, 0, 0);
+		opacity: 1;
 	}
 }
 
@@ -200,12 +198,12 @@
 
 @media only screen and (max-width: $third-breakpoint) {
 	.header {
-		height: 230px;
+		height: 180px;
 
 		&__container {
 			justify-content: space-between;
 			display: grid;
-			gap: 30px;
+			gap: 20px;
 			grid-template: repeat(3, min-content) / 1fr min-content;
 		}
 
@@ -240,12 +238,6 @@
 }
 
 @media only screen and (max-width: 350px) {
-	.header {
-		&__container {
-			gap: 20px;
-		}
-	}
-
 	.header__button {
 		font-size: 14px;
 	}

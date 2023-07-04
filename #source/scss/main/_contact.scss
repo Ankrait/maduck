@@ -60,12 +60,37 @@
 			width: 6px;
 			height: 6px;
 			border-radius: 50%;
+
+			transition: all 0.2s ease;
 		}
 		&._tg::before {
 			background: #24a1de;
 		}
 		&._wa::before {
 			background: #44ec62;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 1px;
+
+			left: 50%;
+			transform: translate(-50%);
+			bottom: 0;
+
+			background: $white;
+
+			max-width: 0;
+			transition: max-width 0.2s ease;
+		}
+		&:hover::after {
+			max-width: 100%;
+		}
+		&:hover::before {
+			width: 8px;
+			height: 8px;
 		}
 	}
 
