@@ -97,6 +97,10 @@
 		width: 100%;
 		height: 100%;
 
+		color: #747474;
+		font-size: 16px;
+		line-height: 125%;
+
 		transform: perspective(600px) rotateY(180deg);
 	}
 	&__front {
@@ -172,10 +176,11 @@
 		}
 
 		.swiper-wrapper {
-			display: flex;
-			align-items: stretch;
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-auto-flow: column;
 			gap: 0;
-			max-width: 230px;
+			max-width: 343px;
 		}
 
 		.swiper-slide {
@@ -196,6 +201,64 @@
 			height: 8px;
 			margin: 0 6px;
 			background: #313131;
+		}
+	}
+
+	.field-item {
+		padding: 24px;
+		border: 1px solid $gray;
+		border-radius: 15px;
+		height: 100%;
+
+		&__image {
+			width: 64px;
+			flex: 0 0 64px;
+
+			img {
+				width: 100%;
+				object-fit: contain;
+			}
+		}
+
+		&__front,
+		&__back {
+			background: transparent;
+			border: none;
+			border-radius: 0;
+
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 20px;
+			padding: 0;
+
+			backface-visibility: hidden;
+			transition: transform 1s ease;
+		}
+
+		&__back {
+			position: static;
+			margin: 12px 0 0 0;
+			align-items: start;
+
+			transform: perspective(0) rotateY(0);
+		}
+		&__front {
+			margin: 0 0 0 -10px;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+			gap: 6px;
+
+			transform: perspective(0) rotateY(0);
+		}
+
+		&:hover {
+			.field-item__front {
+				transform: perspective(0) rotateY(0);
+			}
+			.field-item__back {
+				transform: perspective(0) rotateY(0);
+			}
 		}
 	}
 }

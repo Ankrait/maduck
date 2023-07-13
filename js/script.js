@@ -142,35 +142,95 @@ scroll_links.forEach((link) => {
 // * отправление запроса к php
 const form = document.querySelector('.form-contact');
 const file_input = document.getElementById('input-file');
+const file_label = document.querySelector('.input-file__name');
+const file_cross = document.querySelector('.input-file__cross');
+
+const setFormStatus = (message, isSuccess) => {
+	const type = isSuccess ? 'success' : 'rejected';
+
+	form.classList.add(type);
+	form.querySelector('.info').innerHTML = message;
+	setTimeout(() => {
+		form.classList.remove('success');
+		form.classList.remove('rejected');
+	}, 10000);
+};
+
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const data = new FormData(form);
 
 	if (!form.Name.value) {
-		alert('Введите имя');
+		setFormStatus('Введите имя');
 		return;
 	}
 	if (!form.Phone.value) {
-		alert('Введите телефон');
+		setFormStatus('Введите телефон');
 		return;
 	}
+
+	form.classList.add('pending');
 
 	fetch('send-message-to-telegram.php', {
 		method: 'POST',
 		body: data,
-	}).then((response) => {
-		console.log(response);
-		if (response.ok) {
-			alert('success');
-		} else {
-			alert('error');
-		}
-	});
+	})
+		.then((response) => {
+			if (response.ok) {
+				form.reset();
+				file_label.classList.remove('_active');
+
+				switch (response.status) {
+					case 200:
+						setFormStatus('Данные отправлены', true);
+						break;
+					case 201:
+						setFormStatus('Данные отправлены. Ошибка отправки файла', true);
+					default:
+						break;
+				}
+			} else {
+				setFormStatus('Ошибка сервера', false);
+			}
+		})
+		.finally(() => {
+			form.classList.remove('pending');
+		});
 });
-file_input.addEventListener('change', (e) => {
-	if (file_input.files.length > 2) {
-		alert('Не больше двух файлов');
-		file_input.value = '';
+
+file_cross.addEventListener('click', (e) => {
+	e.preventDefault();
+	file_input.value = '';
+	file_label.classList.remove('_active');
+});
+
+file_input.addEventListener('input', (e) => {
+	if (file_input.files.length === 0) {
+		file_label.classList.remove('_active');
+		return;
 	}
-	console.log(file_input?.files);
+
+	if (file_input.files.length > 1) {
+		setFormStatus('Выберите один файл');
+		file_input.value = '';
+		return;
+	}
+
+	const types = [
+		'text/plain',
+		'image/png',
+		'image/jpeg',
+		'application/pdf',
+		'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+		'application/msword',
+	];
+
+	if (!types.includes(file_input?.files[0]?.type)) {
+		setFormStatus('Неподходящий тип файла');
+		file_input.value = '';
+		return;
+	}
+
+	file_label.classList.add('_active');
+	file_label.innerHTML = file_input.files[0]?.name;
 });

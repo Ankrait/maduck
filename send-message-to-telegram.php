@@ -1,4 +1,5 @@
 <?php
+
 function translit($value)
 {
   $converter = array(
@@ -78,7 +79,7 @@ function translit($value)
 // Токен
 const TOKEN = '5489297780:AAFKxXGkodq8omvyJMhDU-htTxfe4S_sAeU';
 // ID чата
-const CHATID = '-991500808';
+const CHATID = '156045434'; //-991500808
 // Массив допустимых значений типа файла. Популярные типы файлов можно посмотреть тут: https://docs.w3cub.com/http/basics_of_http/mime_types/complete_list_of_mime_types
 $types = array('text/plain', 'image/png', 'image/jpeg', 'application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/msword');
 // Максимальный размер файла в килобайтах
@@ -116,7 +117,7 @@ $textSendStatus = file_get_contents('https://api.telegram.org/bot' . TOKEN . '/s
 
 if (isset(json_decode($textSendStatus)->{'ok'}) && json_decode($textSendStatus)->{'ok'}) {
   if (empty($_FILES['files']['tmp_name'])) {
-    header($_SERVER["SERVER_PROTOCOL"] . " 200 Данные отправлены. Файл пуст");
+    header($_SERVER["SERVER_PROTOCOL"] . " 200 Данные отправлены");
     die();
   }
 
@@ -160,10 +161,12 @@ if (isset(json_decode($textSendStatus)->{'ok'}) && json_decode($textSendStatus)-
   }
 
   if (isset(json_decode($fileSendStatus)->{'ok'}) && json_decode($fileSendStatus)->{'ok'}) {
-    header($_SERVER["SERVER_PROTOCOL"] . " 200 Данные отправлены. Файл отправлен.");
+    header($_SERVER["SERVER_PROTOCOL"] . " 200 Данные отправлены.");
     die();
   }
 
-  header($_SERVER["SERVER_PROTOCOL"] . " 200 Данные отправлены. Файл не отправлен.");
+  header($_SERVER["SERVER_PROTOCOL"] . " 201 Данные отправлены. Ошибка отправки файла.");
   die();
 }
+
+header($_SERVER["SERVER_PROTOCOL"] . " 400 Ошибка сервера");

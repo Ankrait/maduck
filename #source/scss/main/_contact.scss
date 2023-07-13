@@ -173,6 +173,7 @@
 		font-size: 18px;
 		line-height: 130%;
 		color: #bcbcbc;
+
 		input {
 			position: absolute;
 			z-index: -1;
@@ -181,8 +182,43 @@
 			width: 0;
 			height: 0;
 		}
+
 		label {
 			cursor: pointer;
+			width: max-content;
+
+			display: flex;
+			gap: 9px;
+			align-items: center;
+
+			p {
+				display: inline-block;
+			}
+		}
+
+		.input-file {
+			&__cross {
+				margin: 2px 0 0 0;
+				display: none;
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+				display: none;
+			}
+
+			&__name {
+				display: none;
+				&._active {
+					display: inline-block;
+
+					& + .input-file__label {
+						display: none;
+						& + .input-file__cross {
+							display: inline-block;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -207,9 +243,62 @@
 		}
 	}
 
+	& .info {
+		display: none;
+		flex: 1 1 100%;
+	}
+
 	// .form-contact__button
 	&__button {
 		margin: 22px 0 0 0;
+
+		& svg {
+			display: none;
+			margin: 0 auto;
+			width: 20px;
+			height: 20px;
+			animation: circle 0.8s linear infinite;
+
+			@keyframes circle {
+				0% {
+					transform: rotate(0deg);
+				}
+				50% {
+					transform: rotate(180deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		}
+	}
+
+	&.pending {
+		pointer-events: none;
+
+		& .form-contact__button {
+			opacity: 0.7;
+			p {
+				display: none;
+			}
+			svg {
+				display: block;
+			}
+		}
+	}
+
+	&.success {
+		& .info {
+			display: block;
+			color: #44ec62;
+		}
+	}
+
+	&.rejected {
+		& .info {
+			display: block;
+			color: #f54b4b;
+		}
 	}
 }
 
